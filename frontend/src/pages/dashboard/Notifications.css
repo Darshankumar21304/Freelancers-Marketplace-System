@@ -1,0 +1,290 @@
+.gigsphere-notifications {
+  --primary: var(--primary-color, #2563eb);
+  --primary-hover: #1d4ed8;
+  --bg-surface: var(--white, #ffffff);
+  --bg-body: var(--bg-light, #f3f4f6);
+  --text-main: var(--text-primary, #111827);
+  --text-muted: var(--text-secondary, #6b7280);
+  --border-color: var(--border, #e5e7eb);
+  --unread-bg: #eff6ff;
+
+  background-color: var(--bg-body);
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+:root.dark .gigsphere-notifications,
+.dark .gigsphere-notifications {
+  --bg-surface: #1f2937;
+  --bg-body: #111827;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+  --unread-bg: rgba(37, 99, 235, 0.1);
+}
+
+.gigsphere-notifications * {
+  box-sizing: border-box;
+}
+
+.gigsphere-notifications .notifications-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER */
+.gigsphere-notifications .page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gigsphere-notifications .breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-notifications .title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gigsphere-notifications .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.gigsphere-notifications .unread-badge {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.gigsphere-notifications .page-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* CARD */
+.gigsphere-notifications .card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* TOOLBAR */
+.gigsphere-notifications .notifications-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gigsphere-notifications .filters {
+  display: flex;
+  gap: 12px;
+}
+
+.gigsphere-notifications .filter-btn {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.gigsphere-notifications .filter-btn:hover {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+.gigsphere-notifications .filter-btn.active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.gigsphere-notifications .mark-read-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.gigsphere-notifications .mark-read-btn:hover:not(:disabled) {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-notifications .mark-read-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--text-muted);
+}
+
+/* LIST & ITEMS */
+.gigsphere-notifications .notifications-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.gigsphere-notifications .notification-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.gigsphere-notifications .notification-item:last-child {
+  border-bottom: none;
+}
+
+.gigsphere-notifications .notification-item:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-notifications .notification-item.unread {
+  background-color: var(--unread-bg);
+}
+
+.gigsphere-notifications .notification-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gigsphere-notifications .notification-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gigsphere-notifications .notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.gigsphere-notifications .notification-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.gigsphere-notifications .notification-time {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.gigsphere-notifications .notification-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ACTIONS */
+.gigsphere-notifications .notification-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.gigsphere-notifications .notification-item:hover .notification-actions {
+  opacity: 1;
+}
+
+.gigsphere-notifications .action-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  background-color: var(--bg-surface);
+}
+
+.gigsphere-notifications .action-btn:hover {
+  background-color: var(--bg-body);
+  color: var(--text-main);
+}
+
+.gigsphere-notifications .action-btn.check-btn:hover {
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.gigsphere-notifications .action-btn.delete-btn:hover {
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* EMPTY STATE */
+.gigsphere-notifications .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.gigsphere-notifications .empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.gigsphere-notifications .empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-notifications .empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}

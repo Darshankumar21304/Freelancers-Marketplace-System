@@ -1,0 +1,1015 @@
+.gigsphere-freelancer-active-projects {
+  --primary: var(--primary-color, #2563eb);
+  --primary-hover: #1d4ed8;
+  --bg-surface: var(--white, #ffffff);
+  --bg-body: var(--bg-light, #f3f4f6);
+  --text-main: var(--text-primary, #111827);
+  --text-muted: var(--text-secondary, #6b7280);
+  --border-color: var(--border, #e5e7eb);
+  
+  --status-in-progress-bg: rgba(59, 130, 246, 0.1);
+  --status-in-progress-text: #2563eb;
+  --status-submitted-bg: rgba(245, 158, 11, 0.1);
+  --status-submitted-text: #d97706;
+  --status-revision-bg: rgba(239, 68, 68, 0.1);
+  --status-revision-text: #dc2626;
+  --status-completed-bg: rgba(16, 185, 129, 0.1);
+  --status-completed-text: #059669;
+
+  --urgency-high-bg: rgba(239, 68, 68, 0.1);
+  --urgency-high-text: #dc2626;
+  --urgency-medium-bg: rgba(245, 158, 11, 0.1);
+  --urgency-medium-text: #d97706;
+  --urgency-low-bg: rgba(16, 185, 129, 0.1);
+  --urgency-low-text: #059669;
+
+  background-color: var(--bg-body);
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+:root.dark .gigsphere-freelancer-active-projects,
+.dark .gigsphere-freelancer-active-projects {
+  --bg-surface: #1f2937;
+  --bg-body: #111827;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+}
+
+.gigsphere-freelancer-active-projects * {
+  box-sizing: border-box;
+}
+
+.gigsphere-freelancer-active-projects .projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER */
+.gigsphere-freelancer-active-projects .page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-active-projects .breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-active-projects .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .page-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* KPI CARDS */
+.gigsphere-freelancer-active-projects .kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-active-projects .kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gigsphere-freelancer-active-projects .kpi-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0,0,0,0.05));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gigsphere-freelancer-active-projects .kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1));
+}
+
+.gigsphere-freelancer-active-projects .kpi-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+.gigsphere-freelancer-active-projects .kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* TABS */
+.gigsphere-freelancer-active-projects .tabs-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0;
+  scrollbar-width: none;
+}
+
+.gigsphere-freelancer-active-projects .tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gigsphere-freelancer-active-projects .tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.gigsphere-freelancer-active-projects .tab-btn:hover {
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* CARDS */
+.gigsphere-freelancer-active-projects .projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .gigsphere-freelancer-active-projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gigsphere-freelancer-active-projects .project-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gigsphere-freelancer-active-projects .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: var(--primary);
+}
+
+.gigsphere-freelancer-active-projects .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-active-projects .client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.gigsphere-freelancer-active-projects .client-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--border-color);
+}
+
+.gigsphere-freelancer-active-projects .client-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-active-projects .project-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.gigsphere-freelancer-active-projects .status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gigsphere-freelancer-active-projects .status-in-progress { background-color: var(--status-in-progress-bg); color: var(--status-in-progress-text); }
+.gigsphere-freelancer-active-projects .status-submitted-for-review { background-color: var(--status-submitted-bg); color: var(--status-submitted-text); }
+.gigsphere-freelancer-active-projects .status-revision-requested { background-color: var(--status-revision-bg); color: var(--status-revision-text); }
+.gigsphere-freelancer-active-projects .status-completed { background-color: var(--status-completed-bg); color: var(--status-completed-text); }
+
+/* FINANCIAL GRID */
+.gigsphere-freelancer-active-projects .financial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background-color: var(--bg-body);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-active-projects .financial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gigsphere-freelancer-active-projects .financial-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-active-projects .financial-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-active-projects .financial-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .value-earned {
+  color: #059669;
+}
+
+.gigsphere-freelancer-active-projects .value-remaining {
+  color: #d97706;
+}
+
+/* PROGRESS SECTION */
+.gigsphere-freelancer-active-projects .progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-active-projects .progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.gigsphere-freelancer-active-projects .progress-title {
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .progress-count {
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-active-projects .progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gigsphere-freelancer-active-projects .progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary, #0EA5E9));
+  border-radius: 4px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.4);
+}
+
+.gigsphere-freelancer-active-projects .milestone-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.gigsphere-freelancer-active-projects .milestone-current {
+  font-size: 14px;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-active-projects .urgency-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.gigsphere-freelancer-active-projects .urgency-high { background-color: var(--urgency-high-bg); color: var(--urgency-high-text); }
+.gigsphere-freelancer-active-projects .urgency-medium { background-color: var(--urgency-medium-bg); color: var(--urgency-medium-text); }
+.gigsphere-freelancer-active-projects .urgency-low { background-color: var(--urgency-low-bg); color: var(--urgency-low-text); }
+
+/* DATES & DEADLINES */
+.gigsphere-freelancer-active-projects .dates-flex {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border-color);
+  padding-top: 16px;
+}
+
+/* ACTIONS */
+.gigsphere-freelancer-active-projects .card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.gigsphere-freelancer-active-projects .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+
+.gigsphere-freelancer-active-projects .btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.gigsphere-freelancer-active-projects .btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.gigsphere-freelancer-active-projects .btn-secondary {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .btn-secondary:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-active-projects .btn-success {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.gigsphere-freelancer-active-projects .btn-success:hover {
+  background-color: #059669;
+}
+
+/* DEADLINES BANNER */
+.gigsphere-freelancer-active-projects .deadlines-banner {
+  background-color: var(--urgency-high-bg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--urgency-high-text);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* SKELETON & EMPTY STATE */
+.gigsphere-freelancer-active-projects .skeleton {
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-body) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.gigsphere-freelancer-active-projects .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.gigsphere-freelancer-active-projects .empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.gigsphere-freelancer-active-projects .empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-active-projects .empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+  max-width: 400px;
+}
+
+/* WORKSPACE VIEW */
+.gigsphere-freelancer-active-projects .workspace-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gigsphere-freelancer-active-projects .back-btn {
+  align-self: flex-start;
+  padding: 8px 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+}
+
+.gigsphere-freelancer-active-projects .workspace-header {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.gigsphere-freelancer-active-projects .client-avatar-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.gigsphere-freelancer-active-projects .client-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.gigsphere-freelancer-active-projects .workspace-content {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 16px;
+  min-height: 400px;
+}
+
+.gigsphere-freelancer-active-projects .mt-16 { margin-top: 16px; }
+.gigsphere-freelancer-active-projects .mt-24 { margin-top: 24px; }
+
+/* MILESTONES TAB */
+.gigsphere-freelancer-active-projects .section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-active-projects .milestone-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-active-projects .milestone-number {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.gigsphere-freelancer-active-projects .milestone-details {
+  flex: 1;
+}
+
+.gigsphere-freelancer-active-projects .milestone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.gigsphere-freelancer-active-projects .milestone-header h4 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .milestone-amount {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .milestone-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.gigsphere-freelancer-active-projects .milestone-deadline {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-active-projects .milestone-actions {
+  flex-shrink: 0;
+}
+
+/* SUBMIT MODAL */
+.gigsphere-freelancer-active-projects .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gigsphere-freelancer-active-projects .modal-content {
+  background-color: var(--bg-surface);
+  padding: 24px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gigsphere-freelancer-active-projects .modal-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-active-projects .upload-box {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background-color: var(--bg-body);
+  transition: border-color 0.2s;
+}
+
+.gigsphere-freelancer-active-projects .upload-box:hover {
+  border-color: var(--primary);
+}
+
+.gigsphere-freelancer-active-projects .search-input {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  outline: none;
+  font-family: inherit;
+  padding: 10px 12px;
+}
+
+.gigsphere-freelancer-active-projects .search-input:focus {
+  border-color: var(--primary);
+}
+
+.gigsphere-freelancer-active-projects .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-active-projects .btn-outline {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-active-projects .btn-outline:hover {
+  background-color: var(--bg-body);
+}
+
+@media (max-width: 640px) {
+  .gigsphere-freelancer-active-projects .milestone-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .gigsphere-freelancer-active-projects .milestone-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+/* SHARED MATERIALS & FILES TAB */
+.materials-section-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.materials-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.materials-sec-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.materials-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.materials-section-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.project-brief-content {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.project-scope-desc {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0 0 14px 0;
+  white-space: pre-line;
+}
+
+.project-scope-skills {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.scope-skills-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.scope-skills-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scope-skill-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--primary);
+  border-radius: 99px;
+}
+
+/* Materials Files Grid */
+.materials-files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.mat-file-card {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.mat-file-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.mat-file-icon-box {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-file-meta {
+  flex: 1;
+}
+
+.mat-file-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-file-size {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.mat-file-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.mat-btn-preview, .mat-btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mat-btn-preview {
+  background: #1a73e8;
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.25);
+}
+
+.mat-btn-preview:hover {
+  background: #1557b0;
+  transform: translateY(-1px);
+}
+
+.mat-btn-download {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.mat-btn-download:hover {
+  background: var(--border-color);
+  transform: translateY(-1px);
+}
+
+.empty-materials-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background: var(--bg-body);
+  border: 1.5px dashed var(--border-color);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.empty-mat-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 8px 0 4px 0;
+}
+
+.empty-mat-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.45;
+}
+
+.upload-deliverable-btn, .github-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.upload-deliverable-btn {
+  background: #8b5cf6;
+  color: #ffffff;
+  border: none;
+}
+
+.upload-deliverable-btn:hover:not(.disabled) {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.upload-deliverable-btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.github-share-btn {
+  background: #24292f;
+  color: #ffffff;
+  border: none;
+}
+
+.github-share-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+.mat-btn-delete {
+  padding: 6px 10px;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mat-btn-delete:hover {
+  background: #fee2e2;
+}
+
+.mat-upload-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 10px;
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+}
+
+/* Lightbox Modal */
+.media-preview-modal {
+  background: var(--bg-surface);
+  border-radius: 20px;
+  max-width: 800px;
+  width: 90%;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.media-preview-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.media-preview-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.close-preview-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.media-preview-body {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  max-height: 70vh;
+  overflow: auto;
+}
+
+.preview-lightbox-img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.preview-lightbox-frame {
+  width: 100%;
+  height: 60vh;
+  border: none;
+}
+

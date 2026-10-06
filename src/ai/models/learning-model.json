@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "skills": {
+    "react": {
+      "views": 18,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 7,
+      "completions": 0,
+      "successRate": 0.84
+    },
+    "node.js": {
+      "views": 3,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 7,
+      "completions": 0,
+      "successRate": 0.9
+    },
+    "mongodb": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "rag": {
+      "views": 2,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0
+    },
+    "python": {
+      "views": 0,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0
+    },
+    "next.js": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "typescript": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "tailwind css": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "rest_api": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "express": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    },
+    "payment integration": {
+      "views": 1,
+      "bookmarks": 0,
+      "proposals": 0,
+      "hires": 0,
+      "completions": 0,
+      "successRate": 0.45
+    }
+  },
+  "projectSignals": {},
+  "global": {
+    "lastUpdated": "2026-09-15T07:14:52.854Z"
+  },
+  "limits": {
+    "maxSkillBoost": 0.1,
+    "maxSkillPenalty": -0.1
+  }
+}

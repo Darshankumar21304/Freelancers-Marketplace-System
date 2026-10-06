@@ -1,0 +1,291 @@
+/* Gig History & Completed Works Styles */
+.gig-history-container {
+  font-family: inherit;
+}
+
+.gh-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.gh-title {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.gh-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.gh-btn-primary {
+  padding: 0.65rem 1.4rem;
+  border-radius: 40px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gh-btn-primary:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+/* Stats Summary */
+.gh-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gh-stat-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gh-stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gh-stat-icon.green { background: #dcfce7; color: #10b981; }
+.gh-stat-icon.blue { background: #e8f0fe; color: #1a73e8; }
+.gh-stat-icon.amber { background: #fef3c7; color: #d97706; }
+.gh-stat-icon.purple { background: #f3e8fd; color: #a142f4; }
+
+.gh-stat-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.gh-stat-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+/* Filter Bar */
+.gh-filter-bar {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gh-filter-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.gh-filter-btn {
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gh-filter-btn.active {
+  border-color: #1a73e8;
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.gh-search-wrapper {
+  position: relative;
+  min-width: 260px;
+}
+
+.gh-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.gh-search-input {
+  width: 100%;
+  padding: 8px 14px 8px 38px;
+  border-radius: 30px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 0.85rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* History List */
+.gh-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gh-item-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.gh-item-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.gh-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gh-client-info {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.gh-client-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.gh-gig-title {
+  margin: 0 0 2px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.gh-client-name {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.gh-price-tag {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #10b981;
+}
+
+.gh-review-box {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.gh-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.gh-review-date {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-left: 6px;
+}
+
+.gh-review-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #334155;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.gh-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.gh-badge.completed {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #10b981;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.gh-badge.in-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #dbeafe;
+  color: #1e40af;
+  font-weight: 800;
+  font-size: 0.78rem;
+}
+
+.gh-btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.gh-btn-link:hover {
+  text-decoration: underline;
+}
+
+.gh-empty-box {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 20px;
+  color: #64748b;
+}

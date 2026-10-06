@@ -1,0 +1,918 @@
+.gigsphere-freelancer-browse-projects {
+  --primary-color: #1A73E8;
+  --primary-hover: #1557b0;
+  --bg-surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --bg-body: #ffffff;
+  --chip-bg: #f8fafc;
+  --chip-text: #475569;
+  --chip-active-bg: #1A73E8;
+  --chip-active-text: #ffffff;
+  
+  background: radial-gradient(circle at 50% 20%, rgba(232, 240, 254, 0.6) 0%, rgba(255, 255, 255, 1) 70%);
+  min-height: 100vh;
+  padding: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-main);
+}
+
+/* Dark mode support if the app has a .dark class */
+:root.dark .gigsphere-freelancer-browse-projects,
+.dark .gigsphere-freelancer-browse-projects {
+  --bg-surface: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --bg-body: #0f172a;
+  --chip-bg: #334155;
+  --chip-text: #cbd5e1;
+}
+
+.gigsphere-freelancer-browse-projects * {
+  box-sizing: border-box;
+}
+
+.gigsphere-freelancer-browse-projects .browse-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+.gigsphere-freelancer-browse-projects .page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-browse-projects .page-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.gigsphere-freelancer-browse-projects .page-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .page-description {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.gigsphere-freelancer-browse-projects .saved-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .saved-projects-btn:hover {
+  background-color: var(--bg-body);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* SEARCH SECTION */
+.gigsphere-freelancer-browse-projects .search-section {
+  background-color: var(--bg-surface);
+  border-radius: 20px;
+  padding: 16px 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px -10px rgba(26, 115, 232, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.gigsphere-freelancer-browse-projects .search-section:hover {
+  box-shadow: 0 15px 40px -10px rgba(26, 115, 232, 0.15);
+}
+
+.gigsphere-freelancer-browse-projects .search-input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-browse-projects .search-input-group {
+    flex-direction: row;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .search-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gigsphere-freelancer-browse-projects .search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .search-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  font-size: 15px;
+  background-color: #f8fafc;
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.gigsphere-freelancer-browse-projects .search-input:focus {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.15);
+}
+
+.gigsphere-freelancer-browse-projects .search-btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0 32px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 50px;
+}
+
+.gigsphere-freelancer-browse-projects .search-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.gigsphere-freelancer-browse-projects .mobile-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 12px;
+  padding: 0 24px;
+  font-weight: 500;
+  cursor: pointer;
+  height: 54px;
+}
+
+@media (min-width: 1024px) {
+  .gigsphere-freelancer-browse-projects .mobile-filter-btn {
+    display: none;
+  }
+}
+
+/* CATEGORY CHIPS */
+.gigsphere-freelancer-browse-projects .category-chips {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.gigsphere-freelancer-browse-projects .category-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.gigsphere-freelancer-browse-projects .chip {
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: var(--chip-bg);
+  color: var(--chip-text);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .chip:hover {
+  background-color: var(--border-color);
+}
+
+.gigsphere-freelancer-browse-projects .chip.active {
+  background-color: var(--chip-active-bg);
+  color: var(--chip-active-text);
+}
+
+/* MAIN LAYOUT */
+.gigsphere-freelancer-browse-projects .content-layout {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  align-items: flex-start;
+}
+
+/* FILTER SIDEBAR */
+.gigsphere-freelancer-browse-projects .filter-sidebar {
+  display: none;
+  width: 280px;
+  flex-shrink: 0;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  position: sticky;
+  top: 24px;
+}
+
+@media (min-width: 1024px) {
+  .gigsphere-freelancer-browse-projects .filter-sidebar {
+    display: block;
+  }
+  
+  .gigsphere-freelancer-browse-projects .filter-sidebar .drawer-header {
+    display: none;
+  }
+}
+
+/* Mobile Filter Drawer */
+.gigsphere-freelancer-browse-projects .filter-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.gigsphere-freelancer-browse-projects .filter-drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.gigsphere-freelancer-browse-projects .filter-drawer {
+  width: 320px;
+  max-width: 85vw;
+  background-color: var(--bg-surface);
+  height: 100%;
+  padding: 24px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.gigsphere-freelancer-browse-projects .filter-drawer-overlay.open .filter-drawer {
+  transform: translateX(0);
+}
+
+.gigsphere-freelancer-browse-projects .drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.gigsphere-freelancer-browse-projects .close-drawer-btn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.gigsphere-freelancer-browse-projects .filter-section {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.gigsphere-freelancer-browse-projects .filter-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gigsphere-freelancer-browse-projects .filter-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox,
+.gigsphere-freelancer-browse-projects .custom-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox:hover,
+.gigsphere-freelancer-browse-projects .custom-radio:hover {
+  color: var(--primary-color);
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox input,
+.gigsphere-freelancer-browse-projects .custom-radio input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--text-muted);
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.gigsphere-freelancer-browse-projects .custom-radio input {
+  border-radius: 50%;
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--bg-surface);
+  background-color: var(--bg-surface);
+  transform-origin: center;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.gigsphere-freelancer-browse-projects .custom-radio input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: var(--bg-surface);
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox input:checked,
+.gigsphere-freelancer-browse-projects .custom-radio input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(26, 115, 232, 0.4);
+}
+
+.gigsphere-freelancer-browse-projects .custom-checkbox input:checked::before,
+.gigsphere-freelancer-browse-projects .custom-radio input:checked::before {
+  transform: scale(1);
+}
+
+.gigsphere-freelancer-browse-projects .custom-select-wrapper {
+  position: relative;
+}
+
+.gigsphere-freelancer-browse-projects .custom-select {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background-color: #f8fafc;
+  color: var(--text-main);
+  font-size: 13.5px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.gigsphere-freelancer-browse-projects .custom-select:focus {
+  background-color: #ffffff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+.gigsphere-freelancer-browse-projects .filter-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.gigsphere-freelancer-browse-projects .filter-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .btn-clear {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .btn-clear:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-browse-projects .btn-apply {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #fff;
+}
+
+.gigsphere-freelancer-browse-projects .btn-apply:hover {
+  background-color: var(--primary-hover);
+}
+
+/* RESULTS AREA */
+.gigsphere-freelancer-browse-projects .results-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.gigsphere-freelancer-browse-projects .results-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-browse-projects .results-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .results-count {
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-browse-projects .results-count strong {
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-browse-projects .sort-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .view-toggle {
+  display: flex;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.gigsphere-freelancer-browse-projects .view-btn {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: all 0.3s ease;
+  border-radius: 999px;
+}
+
+.gigsphere-freelancer-browse-projects .view-btn:hover {
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .view-btn.active {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  box-shadow: 0 4px 12px -4px rgba(26, 115, 232, 0.2);
+}
+
+/* PROJECT CARDS */
+.gigsphere-freelancer-browse-projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.gigsphere-freelancer-browse-projects .projects-grid.list-view {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .project-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 24px;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .card-header {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .project-desc {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .project-meta-grid {
+    grid-template-columns: repeat(4, auto);
+    gap: 32px;
+    margin: 0;
+    width: auto;
+    flex: 1;
+    background: transparent;
+    padding: 0;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .skills-container {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .card-footer {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .gigsphere-freelancer-browse-projects .projects-grid.list-view .card-actions {
+    width: auto;
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gigsphere-freelancer-browse-projects .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .project-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  background-clip: padding-box;
+}
+
+.gigsphere-freelancer-browse-projects .project-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 40px -10px rgba(26, 115, 232, 0.15), 0 10px 20px -10px rgba(26, 115, 232, 0.1);
+  border-color: rgba(26, 115, 232, 0.4);
+}
+
+.gigsphere-freelancer-browse-projects .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-browse-projects .project-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .project-title:hover {
+  color: var(--primary-color);
+}
+
+.gigsphere-freelancer-browse-projects .bookmark-icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.gigsphere-freelancer-browse-projects .bookmark-icon-btn:hover,
+.gigsphere-freelancer-browse-projects .bookmark-icon-btn.saved {
+  color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+.gigsphere-freelancer-browse-projects .client-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .client-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #eab308;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-browse-projects .client-rating span {
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #10b981;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-browse-projects .project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+  background-color: var(--bg-body);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-browse-projects .project-meta-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gigsphere-freelancer-browse-projects .meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-browse-projects .meta-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .meta-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-browse-projects .project-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gigsphere-freelancer-browse-projects .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.gigsphere-freelancer-browse-projects .skill-chip {
+  font-size: 12px;
+  padding: 6px 12px;
+  background-color: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-browse-projects .card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-browse-projects .card-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .footer-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-browse-projects .stat-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gigsphere-freelancer-browse-projects .card-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-browse-projects .card-actions {
+    width: auto;
+  }
+}
+
+.gigsphere-freelancer-browse-projects .card-actions a {
+  flex: 1;
+}
+
+.gigsphere-freelancer-browse-projects .btn-secondary {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .btn-secondary:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-browse-projects .btn-primary {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* PAGINATION */
+.gigsphere-freelancer-browse-projects .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.gigsphere-freelancer-browse-projects .page-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-browse-projects .page-btn:hover:not(:disabled) {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-browse-projects .page-btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.gigsphere-freelancer-browse-projects .page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* SKELETONS & EMPTY STATES */
+.gigsphere-freelancer-browse-projects .skeleton {
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-body) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.gigsphere-freelancer-browse-projects .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background-color: var(--bg-surface);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.gigsphere-freelancer-browse-projects .empty-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.gigsphere-freelancer-browse-projects .empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-browse-projects .empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+  max-width: 400px;
+}

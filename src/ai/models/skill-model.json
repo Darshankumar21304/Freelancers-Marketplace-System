@@ -1,0 +1,198 @@
+{
+  "version": "1.0.0",
+  "normalization": {
+    "caseInsensitive": true,
+    "trimWhitespace": true,
+    "mergeSynonyms": true
+  },
+  "categories": [
+    "web_development",
+    "mobile_development",
+    "design",
+    "ai_ml",
+    "backend",
+    "frontend",
+    "database",
+    "cloud_devops",
+    "content_writing",
+    "digital_marketing"
+  ],
+  "skills": {
+    "react": {
+      "id": "react",
+      "name": "React",
+      "category": "web_development",
+      "synonyms": ["reactjs", "react.js", "react js", "react developer", "frontend react", "react frontend", "react.js developer"],
+      "relatedSkills": ["javascript", "next.js", "redux", "typescript", "tailwind css", "html", "css"],
+      "baseWeight": 1.0
+    },
+    "node.js": {
+      "id": "node.js",
+      "name": "Node.js",
+      "category": "backend",
+      "synonyms": ["nodejs", "node", "node js", "node developer", "node.js developer", "node.js backend", "node backend"],
+      "relatedSkills": ["express", "javascript", "mongodb", "rest api", "typescript", "jwt"],
+      "baseWeight": 1.0
+    },
+    "mongodb": {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "category": "database",
+      "synonyms": ["mongo", "mongo db", "mongo database", "mongoose", "nosql", "mongodb database"],
+      "relatedSkills": ["node.js", "express", "sql", "postgresql", "redis"],
+      "baseWeight": 1.0
+    },
+    "python": {
+      "id": "python",
+      "name": "Python",
+      "category": "backend",
+      "synonyms": ["py", "python3", "python 3", "python developer"],
+      "relatedSkills": ["django", "flask", "fastapi", "machine learning", "rag", "pytorch", "tensorflow", "langchain"],
+      "baseWeight": 1.0
+    },
+    "javascript": {
+      "id": "javascript",
+      "name": "JavaScript",
+      "category": "web_development",
+      "synonyms": ["js", "ecmascript", "es6", "vanilla js"],
+      "relatedSkills": ["typescript", "react", "node.js", "vue", "html", "css"],
+      "baseWeight": 1.0
+    },
+    "typescript": {
+      "id": "typescript",
+      "name": "TypeScript",
+      "category": "web_development",
+      "synonyms": ["ts", "typescript developer"],
+      "relatedSkills": ["javascript", "react", "node.js", "next.js", "angular"],
+      "baseWeight": 1.0
+    },
+    "express": {
+      "id": "express",
+      "name": "Express",
+      "category": "backend",
+      "synonyms": ["expressjs", "express.js", "express js", "express backend"],
+      "relatedSkills": ["node.js", "mongodb", "rest api", "javascript"],
+      "baseWeight": 0.95
+    },
+    "rest_api": {
+      "id": "rest_api",
+      "name": "REST API",
+      "category": "backend",
+      "synonyms": ["rest api", "rest apis", "restful api", "restful apis", "api integration", "apis"],
+      "relatedSkills": ["node.js", "express", "graphql", "backend"],
+      "baseWeight": 0.95
+    },
+    "ui/ux design": {
+      "id": "ui/ux design",
+      "name": "UI/UX Design",
+      "category": "design",
+      "synonyms": ["ui ux", "ui/ux", "ui design", "ux design", "product design", "figma designer"],
+      "relatedSkills": ["figma", "wireframing", "prototyping", "tailwind css", "css"],
+      "baseWeight": 1.0
+    },
+    "figma": {
+      "id": "figma",
+      "name": "Figma",
+      "category": "design",
+      "synonyms": ["figma design", "figma prototype"],
+      "relatedSkills": ["ui/ux design", "prototyping", "wireframing", "adobe xd"],
+      "baseWeight": 0.95
+    },
+    "machine learning": {
+      "id": "machine learning",
+      "name": "Machine Learning",
+      "category": "ai_ml",
+      "synonyms": ["ml", "deep learning", "ai", "artificial intelligence", "machine learning engineer"],
+      "relatedSkills": ["python", "pytorch", "tensorflow", "scikit-learn", "langchain", "nlp", "llm", "rag"],
+      "baseWeight": 1.0
+    },
+    "rag": {
+      "id": "rag",
+      "name": "RAG (Retrieval-Augmented Generation)",
+      "category": "ai_ml",
+      "synonyms": ["retrieval augmented generation", "rag pipeline", "vector search", "embeddings", "langchain"],
+      "relatedSkills": ["python", "machine learning", "fastapi", "vector database", "pinecone", "chromadb", "openai"],
+      "baseWeight": 1.0
+    },
+    "next.js": {
+      "id": "next.js",
+      "name": "Next.js",
+      "category": "web_development",
+      "synonyms": ["nextjs", "next", "next js", "next.js developer"],
+      "relatedSkills": ["react", "typescript", "tailwind css", "node.js", "ssr"],
+      "baseWeight": 1.0
+    },
+    "tailwind css": {
+      "id": "tailwind css",
+      "name": "Tailwind CSS",
+      "category": "web_development",
+      "synonyms": ["tailwind", "tailwindcss", "tailwind ui"],
+      "relatedSkills": ["css", "html", "react", "next.js"],
+      "baseWeight": 0.9
+    },
+    "flutter": {
+      "id": "flutter",
+      "name": "Flutter",
+      "category": "mobile_development",
+      "synonyms": ["flutter dart", "flutter mobile", "flutter developer"],
+      "relatedSkills": ["dart", "mobile development", "firebase", "android", "ios"],
+      "baseWeight": 1.0
+    },
+    "react native": {
+      "id": "react native",
+      "name": "React Native",
+      "category": "mobile_development",
+      "synonyms": ["reactnative", "rn", "react native mobile"],
+      "relatedSkills": ["react", "javascript", "typescript", "mobile development", "expo"],
+      "baseWeight": 1.0
+    },
+    "docker": {
+      "id": "docker",
+      "name": "Docker",
+      "category": "cloud_devops",
+      "synonyms": ["containers", "containerization", "dockerfile"],
+      "relatedSkills": ["kubernetes", "aws", "ci/cd", "linux"],
+      "baseWeight": 0.95
+    },
+    "aws": {
+      "id": "aws",
+      "name": "AWS",
+      "category": "cloud_devops",
+      "synonyms": ["amazon web services", "amazon aws", "cloud", "aws cloud"],
+      "relatedSkills": ["docker", "ci/cd", "linux", "serverless"],
+      "baseWeight": 1.0
+    },
+    "postgresql": {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "category": "database",
+      "synonyms": ["postgres", "psql", "sql"],
+      "relatedSkills": ["sql", "database", "node.js", "python", "prisma"],
+      "baseWeight": 1.0
+    },
+    "graphql": {
+      "id": "graphql",
+      "name": "GraphQL",
+      "category": "backend",
+      "synonyms": ["gql", "apollo graphql"],
+      "relatedSkills": ["rest_api", "node.js", "react", "typescript"],
+      "baseWeight": 0.95
+    },
+    "payment integration": {
+      "id": "payment integration",
+      "name": "Payment Integration",
+      "category": "backend",
+      "synonyms": ["stripe", "razorpay", "paypal", "payment gateway", "payment integration", "payment integrations"],
+      "relatedSkills": ["node.js", "express", "rest_api", "security"],
+      "baseWeight": 0.95
+    },
+    "authentication": {
+      "id": "authentication",
+      "name": "Authentication",
+      "category": "backend",
+      "synonyms": ["auth", "jwt", "oauth", "login system", "user auth", "authentication system"],
+      "relatedSkills": ["node.js", "express", "security"],
+      "baseWeight": 0.95
+    }
+  }
+}

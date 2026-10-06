@@ -1,0 +1,740 @@
+.gigsphere-freelancer-proposals {
+  --primary: var(--primary-color, #2563eb);
+  --primary-hover: #1d4ed8;
+  --bg-surface: var(--white, #ffffff);
+  --bg-body: var(--bg-light, #f3f4f6);
+  --text-main: var(--text-primary, #111827);
+  --text-muted: var(--text-secondary, #6b7280);
+  --border-color: var(--border, #e5e7eb);
+  
+  --status-pending-bg: rgba(245, 158, 11, 0.1);
+  --status-pending-text: #d97706;
+  --status-shortlisted-bg: rgba(59, 130, 246, 0.1);
+  --status-shortlisted-text: #2563eb;
+  --status-accepted-bg: rgba(16, 185, 129, 0.1);
+  --status-accepted-text: #059669;
+  --status-declined-bg: rgba(239, 68, 68, 0.1);
+  --status-declined-text: #dc2626;
+  --status-withdrawn-bg: rgba(107, 114, 128, 0.1);
+  --status-withdrawn-text: #4b5563;
+
+  background-color: var(--bg-body);
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+:root.dark .gigsphere-freelancer-proposals,
+.dark .gigsphere-freelancer-proposals {
+  --bg-surface: #1f2937;
+  --bg-body: #111827;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+}
+
+.gigsphere-freelancer-proposals * {
+  box-sizing: border-box;
+}
+
+.gigsphere-freelancer-proposals .proposals-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER */
+.gigsphere-freelancer-proposals .page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-proposals .breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-proposals .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-proposals .page-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* KPI CARDS */
+.gigsphere-freelancer-proposals .kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-proposals .kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gigsphere-freelancer-proposals .kpi-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.gigsphere-freelancer-proposals .kpi-title {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+.gigsphere-freelancer-proposals .kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* FILTER TABS */
+.gigsphere-freelancer-proposals .tabs-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0;
+  scrollbar-width: none;
+}
+
+.gigsphere-freelancer-proposals .tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gigsphere-freelancer-proposals .tab-btn {
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+  margin-bottom: -1px;
+}
+
+.gigsphere-freelancer-proposals .tab-btn:hover {
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-proposals .tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* TOOLBAR */
+.gigsphere-freelancer-proposals .toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-proposals .toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.gigsphere-freelancer-proposals .search-box {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.gigsphere-freelancer-proposals .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-proposals .search-input {
+  width: 100%;
+  padding: 10px 12px 10px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.gigsphere-freelancer-proposals .search-input:focus {
+  border-color: var(--primary);
+}
+
+.gigsphere-freelancer-proposals .toolbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-proposals .btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gigsphere-freelancer-proposals .btn-outline:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-proposals .custom-select {
+  appearance: none;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 10px 32px 10px 16px;
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+/* CARDS */
+.gigsphere-freelancer-proposals .proposals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gigsphere-freelancer-proposals .proposal-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.gigsphere-freelancer-proposals .proposal-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.gigsphere-freelancer-proposals .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-proposals .project-info {
+  flex: 1;
+}
+
+.gigsphere-freelancer-proposals .project-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.gigsphere-freelancer-proposals .client-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-proposals .verified-badge {
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-proposals .status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.gigsphere-freelancer-proposals .status-pending { background-color: var(--status-pending-bg); color: var(--status-pending-text); }
+.gigsphere-freelancer-proposals .status-shortlisted { background-color: var(--status-shortlisted-bg); color: var(--status-shortlisted-text); }
+.gigsphere-freelancer-proposals .status-accepted { background-color: var(--status-accepted-bg); color: var(--status-accepted-text); }
+.gigsphere-freelancer-proposals .status-declined { background-color: var(--status-declined-bg); color: var(--status-declined-text); }
+.gigsphere-freelancer-proposals .status-withdrawn { background-color: var(--status-withdrawn-bg); color: var(--status-withdrawn-text); }
+
+.gigsphere-freelancer-proposals .card-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  background-color: var(--bg-body);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-proposals .card-stats {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.gigsphere-freelancer-proposals .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-proposals .stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-proposals .stat-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-proposals .cover-letter {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  background-color: var(--bg-surface);
+  border-left: 3px solid var(--border-color);
+  padding-left: 16px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gigsphere-freelancer-proposals .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-proposals .skill-chip {
+  background-color: var(--bg-body);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-proposals .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.gigsphere-freelancer-proposals .last-activity {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gigsphere-freelancer-proposals .actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-proposals .btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gigsphere-freelancer-proposals .btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.gigsphere-freelancer-proposals .menu-wrapper {
+  position: relative;
+}
+
+.gigsphere-freelancer-proposals .btn-icon {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gigsphere-freelancer-proposals .btn-icon:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-proposals .dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 8px 0;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.gigsphere-freelancer-proposals .dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.gigsphere-freelancer-proposals .dropdown-item:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-proposals .dropdown-item.danger {
+  color: #dc2626;
+}
+
+/* SKELETON */
+.gigsphere-freelancer-proposals .skeleton {
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-body) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* EMPTY STATES */
+.gigsphere-freelancer-proposals .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.gigsphere-freelancer-proposals .empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.gigsphere-freelancer-proposals .empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-proposals .empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 400px;
+}
+
+/* MODAL OVERLAY */
+.gigsphere-freelancer-proposals .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.gigsphere-freelancer-proposals .modal-content {
+  background-color: var(--bg-surface);
+  padding: 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gigsphere-freelancer-proposals .modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-proposals .modal-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+}
+
+.gigsphere-freelancer-proposals .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-proposals .btn-danger {
+  background-color: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gigsphere-freelancer-proposals .btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* OFFERS AND DETAILS MODAL STYLES */
+.gigsphere-freelancer-proposals .highlight-tab {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.gigsphere-freelancer-proposals .highlight-tab.active {
+  border-bottom-color: var(--primary);
+}
+
+.gigsphere-freelancer-proposals .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gigsphere-freelancer-proposals .badge-primary {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.gigsphere-freelancer-proposals .offer-card {
+  border: 1px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.gigsphere-freelancer-proposals .highlight-stats {
+  background-color: rgba(37, 99, 235, 0.05);
+  border: 1px dashed rgba(37, 99, 235, 0.3);
+}
+
+.gigsphere-freelancer-proposals .text-primary {
+  color: var(--primary);
+}
+
+.gigsphere-freelancer-proposals .text-success {
+  color: #10b981;
+}
+
+.gigsphere-freelancer-proposals .large-modal {
+  max-width: 700px;
+  width: 95%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.gigsphere-freelancer-proposals .modal-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.gigsphere-freelancer-proposals .modal-header-flex .modal-title {
+  margin: 0;
+}
+
+.gigsphere-freelancer-proposals .analysis-section h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-proposals .analysis-section h2 {
+  font-size: 24px;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-proposals .client-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0 0 24px 0;
+}
+
+.gigsphere-freelancer-proposals .verified-icon {
+  color: #10b981;
+}
+
+.gigsphere-freelancer-proposals .analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .gigsphere-freelancer-proposals .analysis-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.gigsphere-freelancer-proposals .analysis-card {
+  background-color: var(--bg-body);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-proposals .analysis-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-proposals .analysis-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-proposals .description-box {
+  background-color: var(--bg-body);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  margin-bottom: 24px;
+}
+
+.gigsphere-freelancer-proposals .description-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.gigsphere-freelancer-proposals .analysis-insights {
+  background-color: rgba(16, 185, 129, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px dashed rgba(16, 185, 129, 0.4);
+}
+
+.gigsphere-freelancer-proposals .analysis-insights h4 {
+  color: #059669;
+}
+
+.gigsphere-freelancer-proposals .analysis-insights p {
+  font-size: 14px;
+  color: #059669;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.gigsphere-freelancer-proposals .btn-outline.danger {
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.gigsphere-freelancer-proposals .btn-outline.danger:hover {
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.gigsphere-freelancer-proposals .btn-primary.success {
+  background-color: #10b981;
+}
+
+.gigsphere-freelancer-proposals .btn-primary.success:hover {
+  background-color: #059669;
+}

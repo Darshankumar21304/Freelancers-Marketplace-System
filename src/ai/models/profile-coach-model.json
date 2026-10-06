@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "qualityWeights": {
+    "titleClarity": 15,
+    "bioCompleteness": 20,
+    "skillsDepth": 25,
+    "portfolioEvidence": 25,
+    "workExperience": 15
+  },
+  "highDemandMarketplaceSkills": [
+    { "skill": "React", "category": "web_development", "demandScore": 95, "avgBudget": 35000 },
+    { "skill": "Node.js", "category": "backend", "demandScore": 92, "avgBudget": 30000 },
+    { "skill": "RAG", "category": "ai_ml", "demandScore": 98, "avgBudget": 50000 },
+    { "skill": "Python", "category": "ai_ml", "demandScore": 90, "avgBudget": 40000 },
+    { "skill": "MongoDB", "category": "database", "demandScore": 88, "avgBudget": 28000 },
+    { "skill": "TypeScript", "category": "web_development", "demandScore": 94, "avgBudget": 38000 },
+    { "skill": "Next.js", "category": "web_development", "demandScore": 91, "avgBudget": 36000 },
+    { "skill": "UI/UX Design", "category": "design", "demandScore": 89, "avgBudget": 25000 },
+    { "skill": "Payment Integration", "category": "backend", "demandScore": 85, "avgBudget": 20000 }
+  ]
+}

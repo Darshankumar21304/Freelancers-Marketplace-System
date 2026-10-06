@@ -1,0 +1,52 @@
+[
+  {
+    "id": "v1.1.0-4138",
+    "version": "1.1.0",
+    "title": "Candidate Ensemble v1.1.0",
+    "creator": "Administrator",
+    "createdAt": "2026-09-13T05:14:24.138Z",
+    "status": "staged",
+    "weights": {
+      "skillMatch": 0.3,
+      "requirementMatch": 0.15,
+      "experience": 0.1,
+      "pastSuccess": 0.1,
+      "rating": 0.08,
+      "budgetCompatibility": 0.07,
+      "availability": 0.05,
+      "relatedSkills": 0.05,
+      "learningAdjustment": 0.1
+    },
+    "limits": {
+      "maxRecommendations": 10,
+      "minimumMatchScore": 45,
+      "maxLearningAdjustment": 0.1
+    },
+    "notes": "Staged through Admin AI Governance Console"
+  },
+  {
+    "id": "v1.0.0-prod",
+    "version": "1.0.0",
+    "title": "GigSphere Baseline Ensemble Model",
+    "creator": "System Administrator",
+    "createdAt": "2026-08-01T00:00:00.000Z",
+    "status": "active",
+    "weights": {
+      "skillMatch": 0.3,
+      "requirementMatch": 0.15,
+      "experience": 0.1,
+      "pastSuccess": 0.1,
+      "rating": 0.08,
+      "budgetCompatibility": 0.07,
+      "availability": 0.05,
+      "relatedSkills": 0.05,
+      "learningAdjustment": 0.1
+    },
+    "limits": {
+      "maxRecommendations": 10,
+      "minimumMatchScore": 45,
+      "maxLearningAdjustment": 0.1
+    },
+    "notes": "Production default validated across initial talent pool"
+  }
+]

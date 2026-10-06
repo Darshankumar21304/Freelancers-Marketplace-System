@@ -1,0 +1,142 @@
+{
+  "version": "1.0.0",
+  "description": "Predefined domain knowledge & signal weights for GigSphere Trust & Fraud Detection Engine",
+  "scoringConfig": {
+    "trustBaseScore": 85,
+    "coldStartBaseline": 80,
+    "riskThresholds": {
+      "low": 29,
+      "medium": 59,
+      "high": 100
+    }
+  },
+  "freelancerSignals": {
+    "duplicate_profile_text": {
+      "category": "authenticity",
+      "baseRisk": 22,
+      "severity": "medium",
+      "initialConfidence": 0.85,
+      "description": "Profile summary or bio matches another registered account above similarity threshold"
+    },
+    "suspicious_profile_image": {
+      "category": "authenticity",
+      "baseRisk": 25,
+      "severity": "medium",
+      "initialConfidence": 0.80,
+      "description": "Profile image pattern flagged as generic placeholder or stock asset"
+    },
+    "incomplete_profile": {
+      "category": "profile",
+      "baseRisk": 10,
+      "severity": "low",
+      "initialConfidence": 0.95,
+      "description": "Missing key professional details such as bio, skills, or portfolio"
+    },
+    "skills_portfolio_mismatch": {
+      "category": "professional",
+      "baseRisk": 18,
+      "severity": "medium",
+      "initialConfidence": 0.75,
+      "description": "Prominent claimed skills are completely unsupported by portfolio or past deliverables"
+    },
+    "unusual_proposal_frequency": {
+      "category": "behavior",
+      "baseRisk": 16,
+      "severity": "medium",
+      "initialConfidence": 0.70,
+      "description": "Abnormally high proposal submission rate without project engagement"
+    },
+    "repeated_contract_cancellations": {
+      "category": "behavior",
+      "baseRisk": 24,
+      "severity": "high",
+      "initialConfidence": 0.88,
+      "description": "High percentage of started contracts cancelled or abandoned before milestone delivery"
+    },
+    "payment_disputes": {
+      "category": "transaction",
+      "baseRisk": 28,
+      "severity": "high",
+      "initialConfidence": 0.92,
+      "description": "Escrow or payment disputes raised against freelancer deliverables"
+    },
+    "unusual_messaging_pattern": {
+      "category": "behavior",
+      "baseRisk": 20,
+      "severity": "medium",
+      "initialConfidence": 0.65,
+      "description": "Detected off-platform communication invitations or suspicious keywords"
+    }
+  },
+  "clientSignals": {
+    "incomplete_company_profile": {
+      "category": "profile",
+      "baseRisk": 10,
+      "severity": "low",
+      "initialConfidence": 0.90,
+      "description": "Client account has unverified company and minimal profile details"
+    },
+    "repeated_posting_without_hiring": {
+      "category": "project_behavior",
+      "baseRisk": 20,
+      "severity": "medium",
+      "initialConfidence": 0.80,
+      "description": "Multiple project postings created and closed without hiring any applicant"
+    },
+    "repeated_project_cancellations": {
+      "category": "project_behavior",
+      "baseRisk": 22,
+      "severity": "medium",
+      "initialConfidence": 0.85,
+      "description": "High frequency of contract cancellations initiated by client"
+    },
+    "unrealistic_budget_pattern": {
+      "category": "project_behavior",
+      "baseRisk": 15,
+      "severity": "low",
+      "initialConfidence": 0.70,
+      "description": "Project budget is significantly disconnected from required scope and deliverable complexity"
+    },
+    "frequent_payment_disputes": {
+      "category": "transaction",
+      "baseRisk": 30,
+      "severity": "critical",
+      "initialConfidence": 0.95,
+      "description": "Repeated payment clawbacks or milestone escrow disputes logged against client"
+    },
+    "off_platform_payment_attempt": {
+      "category": "transaction",
+      "baseRisk": 25,
+      "severity": "high",
+      "initialConfidence": 0.75,
+      "description": "Pattern of attempting to direct payments outside platform escrow system"
+    }
+  },
+  "positiveSignals": {
+    "kyc_verified": {
+      "trustBoost": 15,
+      "riskReduction": 10,
+      "description": "Account identity and documentation officially verified"
+    },
+    "high_completion_rate": {
+      "trustBoost": 12,
+      "riskReduction": 8,
+      "description": "Consistent 90%+ contract and milestone completion track record"
+    },
+    "top_rated_reviews": {
+      "trustBoost": 10,
+      "riskReduction": 8,
+      "description": "Sustained high rating (4.8+) across multiple unique client engagements"
+    },
+    "verified_company": {
+      "trustBoost": 12,
+      "riskReduction": 8,
+      "description": "Corporate client with verified tax/GSTIN credentials"
+    },
+    "established_escrow_history": {
+      "trustBoost": 14,
+      "riskReduction": 10,
+      "description": "Punctual escrow releases without dispute history"
+    }
+  }
+}

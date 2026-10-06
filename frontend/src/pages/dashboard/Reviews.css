@@ -1,0 +1,506 @@
+.gigsphere-freelancer-reviews {
+  --primary: var(--primary-color, #2563eb);
+  --primary-hover: #1d4ed8;
+  --bg-surface: var(--white, #ffffff);
+  --bg-body: var(--bg-light, #f3f4f6);
+  --text-main: var(--text-primary, #111827);
+  --text-muted: var(--text-secondary, #6b7280);
+  --border-color: var(--border, #e5e7eb);
+  --star-color: #f59e0b;
+
+  background-color: var(--bg-body);
+  min-height: 100vh;
+  padding: 32px 16px;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+:root.dark .gigsphere-freelancer-reviews,
+.dark .gigsphere-freelancer-reviews {
+  --bg-surface: #1f2937;
+  --bg-body: #111827;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+}
+
+.gigsphere-freelancer-reviews * {
+  box-sizing: border-box;
+}
+
+.gigsphere-freelancer-reviews .reviews-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* HEADER */
+.gigsphere-freelancer-reviews .page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-reviews .breadcrumb {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-reviews .page-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-reviews .page-desc {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* LAYOUT */
+.gigsphere-freelancer-reviews .dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .gigsphere-freelancer-reviews .dashboard-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.gigsphere-freelancer-reviews .sidebar-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .gigsphere-freelancer-reviews .sidebar-section {
+    width: 320px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 24px;
+  }
+}
+
+.gigsphere-freelancer-reviews .main-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* CARDS COMMON */
+.gigsphere-freelancer-reviews .card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* RATING SUMMARY */
+.gigsphere-freelancer-reviews .summary-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gigsphere-freelancer-reviews .overall-rating {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-reviews .overall-max {
+  font-size: 24px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-reviews .stars-large {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  color: var(--star-color);
+  margin-bottom: 8px;
+}
+
+.gigsphere-freelancer-reviews .total-reviews {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-reviews .distribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-reviews .dist-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-reviews .dist-label {
+  width: 45px;
+  font-weight: 500;
+}
+
+.gigsphere-freelancer-reviews .dist-bar-container {
+  flex: 1;
+  height: 8px;
+  background-color: var(--bg-body);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gigsphere-freelancer-reviews .dist-bar-fill {
+  height: 100%;
+  background-color: var(--star-color);
+  border-radius: 4px;
+}
+
+.gigsphere-freelancer-reviews .dist-count {
+  width: 30px;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+/* PERFORMANCE BREAKDOWN */
+.gigsphere-freelancer-reviews .performance-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-reviews .perf-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gigsphere-freelancer-reviews .perf-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.gigsphere-freelancer-reviews .perf-score {
+  color: var(--primary);
+}
+
+/* FILTERS & SORT */
+.gigsphere-freelancer-reviews .filters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .gigsphere-freelancer-reviews .filters-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.gigsphere-freelancer-reviews .tabs-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.gigsphere-freelancer-reviews .tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gigsphere-freelancer-reviews .tab-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-reviews .tab-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.gigsphere-freelancer-reviews .tab-btn.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.gigsphere-freelancer-reviews .custom-select {
+  appearance: none;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 8px 32px 8px 16px;
+  border-radius: 8px;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  min-width: 160px;
+}
+
+/* REVIEW CARDS */
+.gigsphere-freelancer-reviews .reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gigsphere-freelancer-reviews .review-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-reviews .review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.gigsphere-freelancer-reviews .client-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gigsphere-freelancer-reviews .client-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--border-color);
+}
+
+.gigsphere-freelancer-reviews .client-name-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gigsphere-freelancer-reviews .client-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gigsphere-freelancer-reviews .verified-badge {
+  color: #10b981;
+}
+
+.gigsphere-freelancer-reviews .review-date {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.gigsphere-freelancer-reviews .stars-small {
+  display: flex;
+  gap: 2px;
+  color: var(--star-color);
+}
+
+.gigsphere-freelancer-reviews .project-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.gigsphere-freelancer-reviews .review-text {
+  font-size: 14px;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.gigsphere-freelancer-reviews .review-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.gigsphere-freelancer-reviews .skill-chip {
+  background-color: var(--bg-body);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* FREELANCER RESPONSE */
+.gigsphere-freelancer-reviews .freelancer-response {
+  margin-top: 8px;
+  padding: 16px;
+  background-color: var(--bg-body);
+  border-left: 3px solid var(--primary);
+  border-radius: 4px 8px 8px 4px;
+}
+
+.gigsphere-freelancer-reviews .response-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-reviews .response-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.gigsphere-freelancer-reviews .btn-reply {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gigsphere-freelancer-reviews .btn-reply:hover {
+  background-color: var(--bg-body);
+}
+
+/* SKELETON & EMPTY STATE */
+.gigsphere-freelancer-reviews .skeleton {
+  background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-body) 50%, var(--bg-surface) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.gigsphere-freelancer-reviews .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.gigsphere-freelancer-reviews .empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.gigsphere-freelancer-reviews .empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 8px 0;
+}
+
+.gigsphere-freelancer-reviews .empty-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* PAGINATION */
+.gigsphere-freelancer-reviews .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.gigsphere-freelancer-reviews .page-btn {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gigsphere-freelancer-reviews .page-btn:hover {
+  background-color: var(--bg-body);
+}
+
+.gigsphere-freelancer-reviews .page-btn.active {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.gigsphere-freelancer-reviews .page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

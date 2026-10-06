@@ -1,0 +1,187 @@
+/* Google Pay (GPay) Style Success Popup Modal */
+
+.gpay-success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  padding: 1.25rem;
+  box-sizing: border-box;
+}
+
+.gpay-success-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 25px 60px -15px rgba(16, 185, 129, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.9);
+  max-width: 420px;
+  width: 100%;
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #0f172a;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@keyframes gpayPop {
+  0% { transform: scale(0.85); opacity: 0; }
+  50% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-gpay-pop {
+  animation: gpayPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Iconic Google Pay Animated Checkmark Circle */
+.gpay-circle-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gpay-circle-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+  z-index: 2;
+  animation: gpayCheckPulse 0.5s ease-out forwards;
+}
+
+@keyframes gpayCheckPulse {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Pulsing Ripple Rings */
+.gpay-ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  animation: gpayRipple 1.8s infinite cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+.gpay-ripple-ring.ring-1 {
+  width: 90px;
+  height: 90px;
+  animation-delay: 0s;
+}
+
+.gpay-ripple-ring.ring-2 {
+  width: 110px;
+  height: 110px;
+  animation-delay: 0.3s;
+}
+
+@keyframes gpayRipple {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.gpay-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 30px;
+  font-size: 0.775rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.gpay-amount-title {
+  font-size: 2.35rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+  margin: 0 0 0.25rem 0;
+}
+
+.gpay-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Receipt Details */
+.gpay-receipt-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.gpay-receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.825rem;
+}
+
+.gpay-receipt-row span {
+  color: #64748b;
+}
+
+.gpay-receipt-row strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.gpay-secure-text {
+  color: #10b981;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gpay-done-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #1a73e8;
+  color: #ffffff;
+  border: 1px solid #1a73e8;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(26, 115, 232, 0.25);
+}
+
+.gpay-done-btn:hover {
+  background: #1557b0;
+  box-shadow: 0 6px 18px rgba(26, 115, 232, 0.35);
+  transform: translateY(-1px);
+}

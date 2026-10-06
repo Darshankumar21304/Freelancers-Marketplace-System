@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-09-06T05:44:01.742Z",
+  "totalAdminDecisions": 216,
+  "riskSignals": {
+    "duplicate_profile_text": {
+      "occurrences": 12,
+      "confirmedCases": 10,
+      "falsePositives": 2,
+      "confidence": 0.83,
+      "learnedWeight": 1.15
+    },
+    "suspicious_profile_image": {
+      "occurrences": 8,
+      "confirmedCases": 6,
+      "falsePositives": 2,
+      "confidence": 0.75,
+      "learnedWeight": 1.05
+    },
+    "incomplete_profile": {
+      "occurrences": 25,
+      "confirmedCases": 4,
+      "falsePositives": 21,
+      "confidence": 0.35,
+      "learnedWeight": 0.6
+    },
+    "skills_portfolio_mismatch": {
+      "occurrences": 14,
+      "confirmedCases": 9,
+      "falsePositives": 5,
+      "confidence": 0.64,
+      "learnedWeight": 0.95
+    },
+    "unusual_proposal_frequency": {
+      "occurrences": 18,
+      "confirmedCases": 11,
+      "falsePositives": 7,
+      "confidence": 0.61,
+      "learnedWeight": 0.9
+    },
+    "repeated_contract_cancellations": {
+      "occurrences": 22,
+      "confirmedCases": 18,
+      "falsePositives": 4,
+      "confidence": 0.82,
+      "learnedWeight": 1.2
+    },
+    "payment_disputes": {
+      "occurrences": 15,
+      "confirmedCases": 14,
+      "falsePositives": 1,
+      "confidence": 0.93,
+      "learnedWeight": 1.35
+    },
+    "unusual_messaging_pattern": {
+      "occurrences": 9,
+      "confirmedCases": 7,
+      "falsePositives": 2,
+      "confidence": 0.78,
+      "learnedWeight": 1.1
+    },
+    "repeated_posting_without_hiring": {
+      "occurrences": 19,
+      "confirmedCases": 12,
+      "falsePositives": 7,
+      "confidence": 0.63,
+      "learnedWeight": 0.84
+    },
+    "frequent_payment_disputes": {
+      "occurrences": 10,
+      "confirmedCases": 9,
+      "falsePositives": 1,
+      "confidence": 0.9,
+      "learnedWeight": 1.3
+    },
+    "off_platform_payment_attempt": {
+      "occurrences": 7,
+      "confirmedCases": 6,
+      "falsePositives": 1,
+      "confidence": 0.86,
+      "learnedWeight": 1.22
+    },
+    "telegram_or_offplatform_contact": {
+      "occurrences": 3,
+      "confirmedCases": 3,
+      "falsePositives": 0,
+      "confidence": 1,
+      "learnedWeight": 1.15
+    },
+    "unrealistic_budget": {
+      "occurrences": 210,
+      "confirmedCases": 90,
+      "falsePositives": 120,
+      "confidence": 0.43,
+      "learnedWeight": 0.3
+    }
+  }
+}

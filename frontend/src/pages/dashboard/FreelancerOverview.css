@@ -1,0 +1,777 @@
+/* GigSphere Freelancer Command Center Dashboard Styles */
+
+.fl-dash-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. HERO / TOP SECTION
+   ========================================================================== */
+.fl-hero-banner {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fl-hero-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(26, 115, 232, 0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.fl-hero-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.fl-badge-pro {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, #e8f0fe, #d2e3fc);
+  color: #1a73e8;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.fl-badge-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fl-badge-trust:hover {
+  background: #d1fae5;
+  transform: translateY(-1px);
+}
+
+.fl-hero-title {
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.fl-hero-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.fl-completion-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.fl-progress-mini {
+  width: 80px;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fl-progress-mini-fill {
+  height: 100%;
+  background: #10b981;
+  border-radius: 6px;
+}
+
+.fl-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.fl-availability-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  outline: none;
+}
+
+.fl-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.fl-status-dot.available { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.6); }
+.fl-status-dot.busy { background: #f59e0b; box-shadow: 0 0 8px rgba(245, 158, 11, 0.6); }
+.fl-status-dot.unavailable { background: #94a3b8; }
+
+.fl-btn-edit-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.fl-btn-edit-profile:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.fl-btn-browse-jobs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.fl-btn-browse-jobs:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   2. 6-CARD KPI GRID
+   ========================================================================== */
+.fl-kpi-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.fl-kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.fl-kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.fl-kpi-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fl-kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.fl-kpi-label {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.fl-kpi-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.fl-kpi-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   3. MAIN WORKSPACE 2-COLUMN GRID
+   ========================================================================== */
+.fl-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 1080px) {
+  .fl-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fl-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Common Section Card Style */
+.fl-section-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.fl-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.fl-card-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fl-card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fl-card-badge-count {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.fl-card-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a73e8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.fl-card-link:hover {
+  color: #1557b0;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   ACTIVE PROJECTS LIST
+   ========================================================================== */
+.fl-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fl-project-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fl-project-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.fl-proj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.fl-proj-title {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.fl-proj-client {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.fl-client-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fl-proj-budget-tag {
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+  white-space: nowrap;
+}
+
+.fl-proj-progress-bar {
+  width: 100%;
+  height: 7px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px 0 6px 0;
+}
+
+.fl-proj-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1a73e8, #3b82f6);
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.fl-proj-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fl-proj-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fl-btn-mini-chat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fl-btn-mini-chat:hover {
+  background: #e2e8f0;
+}
+
+.fl-btn-mini-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fl-btn-mini-open:hover {
+  background: #1e293b;
+}
+
+/* ==========================================================================
+   AI RECOMMENDATIONS CARDS
+   ========================================================================== */
+.fl-ai-recomms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.fl-recomm-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.fl-recomm-card:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 6px 20px rgba(26, 115, 232, 0.08);
+  transform: translateY(-2px);
+}
+
+.fl-recomm-match-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: #eff6ff;
+  color: #1a73e8;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border: 1px solid #bfdbfe;
+}
+
+.fl-recomm-title {
+  margin: 10px 0 6px 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.fl-recomm-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.fl-skill-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  background: #f1f5f9;
+  color: #334155;
+  border-radius: 6px;
+}
+
+.fl-recomm-why {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.75rem;
+  color: #475569;
+  margin-bottom: 12px;
+  border-left: 3px solid #1a73e8;
+}
+
+.fl-recomm-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+.fl-recomm-budget {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   PROPOSALS & BIDS TABLE
+   ========================================================================== */
+.fl-proposals-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.fl-proposals-table th {
+  text-align: left;
+  padding: 10px 12px;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fl-proposals-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.fl-status-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.fl-status-pill.pending { background: #fef3c7; color: #b45309; }
+.fl-status-pill.accepted, .fl-status-pill.hired { background: #dcfce7; color: #15803d; }
+.fl-status-pill.rejected { background: #fee2e2; color: #b91c1c; }
+.fl-status-pill.shortlisted { background: #e0e7ff; color: #4338ca; }
+
+/* ==========================================================================
+   RECENT MESSAGES LIST
+   ========================================================================== */
+.fl-messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fl-msg-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+
+.fl-msg-item:hover {
+  background: #f1f5f9;
+}
+
+.fl-msg-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.fl-msg-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.fl-msg-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.fl-msg-text {
+  font-size: 0.78rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.fl-msg-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.fl-msg-time {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.fl-msg-badge {
+  background: #1a73e8;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  border-radius: 10px;
+  padding: 1px 6px;
+}
+
+/* ==========================================================================
+   SAFE PROFILE TRUST CARD
+   ========================================================================== */
+.fl-trust-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fl-trust-score-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.fl-trust-score-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.fl-trust-factors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fl-trust-factor-item {
+  font-size: 0.8rem;
+  color: #15803d;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fl-trust-tip {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #eff6ff;
+  border-left: 3px solid #1a73e8;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   MY GIGS COMPONENT
+   ========================================================================== */
+.fl-gigs-grid-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.fl-gig-mini-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+.fl-gig-mini-card:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+}
+
+.fl-gig-mini-img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.fl-gig-mini-content {
+  padding: 10px 12px;
+}
+
+.fl-gig-mini-title {
+  margin: 0 0 6px 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fl-gig-mini-price {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #10b981;
+}
